@@ -32,31 +32,32 @@
           <h2>Admin</h2>
         </div>
 
-        <form action="">
+        <form action="/admin/search" method="get">
+          @csrf
           <div class="form__button-top">
             <div class="form__group">
-              <input class="form__group-text" type="text" value="名前やメールアドレスを入力してください">
+              <input class="form__group-text" type="text" placeholder="名前やメールアドレスを入力してください"  name="keyword">
             </div>
             <div class="form__group">
-              <select class="form__group-gender" name="" id="">
+              <select class="form__group-gender" name="gender" id="">
                 <option value="" selected hidden>性別</option>
-                <option value="">男性</option>
-                <option value="">女性</option>
-                <option value="">その他</option>
+                <option value="男性">男性</option>
+                <option value="女性">女性</option>
+                <option value="その他">その他</option>
               </select>
             </div>
             <div class="form__group">
-              <select class="form__group-category" name="" id="">
+              <select class="form__group-category" name="category_id" id="">
                 <option value="" selected hidden>お問い合わせの種類</option>
-                <option value="">1.商品のお届けについて</option>
-                <option value="">2.商品の交換について</option>
-                <option value="">3.商品トラブル</option>
-                <option value="">4.ショップへのお問い合わせ</option>
-                <option value="">5.その他</option>
+                <option value="1">商品のお届けについて</option>
+                <option value="2">商品の交換について</option>
+                <option value="3">商品トラブル</option>
+                <option value="4">ショップへのお問い合わせ</option>
+                <option value="5">その他</option>
               </select>
             </div>
             <div class="form__group">
-              <input class="form__group-date" type="date">
+              <input class="form__group-date" type="date" name="created_at" value="{{ request('created_at') }}">
             </div>
             <div class="form__group">
               <button class="form__group-search">検索</button>
@@ -67,6 +68,7 @@
           </div>
             <div class="form__group">
               <button class="form__group-export">エクスポート</button>
+              {{ $contacts->links() }}
             </div>
         </form>
 
@@ -92,39 +94,44 @@
                         <div class="content__inner">
                           <div class="modal__group">
                             <p class="modal__title">お名前</p>
-                            <p class="modal__content-name">山田　太郎</p>
+                            <p class="modal__content-name">{{ $contact['first_name'] }}　{{ $contact['last_name'] }}</p>
                           </div>
                           <div class="modal__group">
                             <p class="modal__title">性別</p>
-                            <p class="modal__content-gender">男性</p>
+                            <p class="modal__content-gender">{{ $contact['gender'] }}</p>
                           </div>
                           <div class="modal__group">
                             <p class="modal__title">メールアドレス</p>
-                            <p class="modal__content-email">test@example.com</p>
+                            <p class="modal__content-email">{{ $contact['email'] }}</p>
                           </div>
                           <div class="modal__group">
                             <p class="modal__title">電話番号</p>
-                            <p class="modal__content-tel">08012345678</p>
+                            <p class="modal__content-tel">{{ $contact['tel'] }}</p>
                           </div>
                           <div class="modal__group">
                             <p class="modal__title">住所</p>
-                            <p class="modal__content-address">東京都</p>
+                            <p class="modal__content-address">{{ $contact['address'] }}</p>
                           </div>
                           <div class="modal__group">
                             <p class="modal__title">建物名</p>
-                            <p class="modal__content-building">千駄ヶ谷マンション101</p>
+                            <p class="modal__content-building">{{ $contact['building'] }}</p>
                           </div>
                           <div class="modal__group">
                             <p class="modal__title">お問い合わせの種類</p>
-                            <p class="modal__content-category">商品の交換について</p>
+                            <p class="modal__content-category">{{ $contact->category->content ?? '未設定' }}</p>
                           </div>
                           <div class="modal__group">
                             <p class="modal__title">お問い合わせの内容</p>
-                            <p class="modal__content-detail">商品が違います</p>
+                            <p class="modal__content-detail">{{ $contact['detail'] }}</p>
                           </div>
+                          <form action="/admin/delete" method="POST">
+                            @method('DELETE')
+                            @csrf
                           <div class="modal__button">
+                            <input type="hidden" name="id" value="{{ $contact['id'] }}">
                             <button class="modal__button-delete">削除</button>
                           </div>
+                          </form>
                             <a href="#" class="close">×</a>
                         </div>
                       </div>

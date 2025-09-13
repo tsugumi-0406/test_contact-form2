@@ -42,11 +42,38 @@ class TestController extends Controller
 //   管理画面の表示
   public function admin()
   { 
-    $contacts = Contact::with('category')->get();
-    return view('admin', compact('contacts'));
+    $contacts = Contact::with('category')->paginate(7);
+    $categories = Category::all();
+    return view('admin', compact('contacts', 'categories'));
   }
 
+//   管理画面での検索機能
+public function search(Request $request)
+{
+    $contacts = Contact::with('category')
+        ->KeywordSearch($request->keyword)
+        ->GenderSearch($request->gender)
+        ->CategorySearch($request->category_id)
+        ->DateSearch($request->created_at)
+        ->paginate(7); 
 
+    $categories = Category::all();
+
+    return view('admin', compact('contacts', 'categories'))
+        ->with([
+            'keyword' => $request->keyword,
+            'gender' => $request->gender,
+            'category_id' => $request->category_id,
+            'created_at' => $request->created_at,
+        ]);
+}
+
+// 削除機能
+public function destroy(Request $request)
+{
+    Contact::find($request->id)->delete();
+    return redirect('/admin');
+}
 
 
   public function register()

@@ -28,6 +28,10 @@ Route::post('/thanks', [TestController::class, 'store']);
 
 Route::get('/admin', [TestController::class, 'admin']);
 
+Route::get('/admin/search', [TestController::class, 'search']);
+
+Route::delete('/admin/delete', [TestController::class, 'destroy']);
+
 Route::get('/register', [TestController::class, 'register']);
 
 Route::get('/login', [TestController::class, 'login']);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\TestRequest;
+use App\Http\Requests\LoginRequest;
 use App\Models\Contact;
 use App\Models\Category;
 
@@ -40,7 +41,7 @@ class TestController extends Controller
   }
 
 //   管理画面の表示
-  public function admin()
+  public function admin(LoginRequest $request)
   { 
     $contacts = Contact::with('category')->paginate(7);
     $categories = Category::all();
@@ -81,7 +82,7 @@ public function destroy(Request $request)
     return view('register');
   }
 
-  public function login()
+  public function login(registerRequest $request)
   {
     return view('login');
   }

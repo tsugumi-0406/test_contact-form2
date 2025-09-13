@@ -31,7 +31,7 @@
         </div>
         <div class="contact-form__main">
           <div class="contact-form__main-inner">
-            <form class="form" action="/login" method="post">
+            <form class="form" action="/admin" method="post">
               @csrf
               <div class="form__group">
                 <div class="form__group-title">

@@ -32,7 +32,7 @@
       </div>
       <div class="contact-form__main">
         <div class="contact-form__main-inner">
-          <form class="form" action="/register" method="post">
+          <form class="form" action="/login" method="get">
             @csrf
             <div class="form__group">
               <div class="form__group-title">

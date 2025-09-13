@@ -26,7 +26,7 @@ Route::get('/edit', [TestController::class, 'edit'])->name('form.index');
 
 Route::post('/thanks', [TestController::class, 'store']);
 
-Route::get('/admin', [TestController::class, 'admin']);
+Route::post('/admin', [TestController::class, 'admin']);
 
 Route::get('/admin/search', [TestController::class, 'search']);
 

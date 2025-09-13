@@ -1,0 +1,37 @@
+.thanks-main{
+    height: 365px;
+    width: 1380px;
+    position: relative;
+    left: 50px;
+}
+
+.thanks-main__back{
+    font-size: 280px;
+    font-weight: 400;
+    color: #8B7969;
+    opacity: 0.05;
+}
+
+.thanks-main__text{
+    font-size: 30px;
+    color: #8B7969;
+    font-weight: 700;
+    position: absolute;
+    top: 150px;
+    left: 420px;
+}
+
+.form__button {
+    display: flex;
+    justify-content: center;
+}
+
+.form__button-submit {
+    color: #FFFFFF;
+    font-size: 20px;
+    background-color: #82756A;
+    margin-top: 20px;
+    padding: 10px 40px;
+    border: none;
+    cursor: pointer;
+}

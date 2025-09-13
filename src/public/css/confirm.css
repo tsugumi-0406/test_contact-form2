@@ -1,0 +1,113 @@
+body {
+    max-width: 1512px;
+    height: 982px;
+}
+
+.header {
+    border: solid 1px #E0DFDE;
+    background-color: #FFFFFF;
+    position: relative;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header__logo {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    font-weight: 400;
+    color: #8B7969;
+    margin: auto 0;
+    font-family: "Newsreader", serif;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-form__content {
+    margin: 0px auto;
+}
+
+.contact-form__heading {
+    text-align: center;
+    font-family: "Newsreader", serif;
+    font-size: 35px;
+    margin: 60px auto 0 auto;
+    font-weight: 400;
+    color: #8B7969;
+}
+
+.form {
+    margin: 0 auto;
+    width: 972px;
+}
+
+.confirm-table {
+    border: 1px solid #E0DFDE;
+}
+
+.confirm-table__inner {
+    width: 100%;
+}
+
+.confirm-table__header {
+    width: 300px;
+    border-bottom: 1px solid #ddd;
+    background-color: #8B7969;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.confirm-table__text {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    color: #8B7969;
+    font-size: 20px;
+    font-weight: 400;
+}
+input
+
+.detail{
+    height: 110px;
+}
+
+.confirm-table__text input {
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.confirm-table__row:last-child .confirm-table__header,
+.confirm-table__row:last-child .confirm-table__text {
+    border-bottom-width: 0;
+}
+
+.form__button {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form__button-submit {
+    color: #FFFFFF;
+    font-size: 20px;
+    background-color: #82756A;
+    margin: 40px 10px auto 400px;
+    padding: 10px 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.form__link{
+    margin: 50px auto auto 80px;
+}
+
+.form__link-correction{
+    color: #8B7969;
+    font-size: 20px;
+}

@@ -1,0 +1,339 @@
+body {
+    width: 1512px;
+    height: 982px;
+}
+
+.header {
+    border: solid 1px #E0DFDE;
+    background-color: #FFFFFF;
+    position: relative;
+    height: 100px;
+    /* ヘッダーの高さを指定 */
+    display: flex;
+    justify-content: flex-end;
+    /* ボタンを右に寄せる */
+}
+
+.header__logo {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    font-weight: 400;
+    color: #8B7969;
+    margin: auto 0;
+    font-family: "Newsreader", serif;
+}
+
+.header__button-submit {
+    border: solid 1px #D9C6B5;
+    border-radius: 3px;
+    color: #D9C6B5;
+    font-family: Register;
+    width: 100px;
+    height: 34px;
+    position: absolute;
+    right: 146px;
+    top: 16px;
+    cursor: pointer;
+    font-family: "Newsreader", serif;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__button-top{
+    width: 1184px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-form__content {
+    margin: 0px auto;
+}
+
+.contact-form__heading {
+    text-align: center;
+    font-family: "Newsreader", serif;
+    font-size: 35px;
+    margin: 60px auto 0 auto;
+    font-weight: 400;
+    color: #8B7969;
+}
+
+.form__group-text{
+    background-color: #E3DED9;
+    border: solid 1px #BEB1A6;
+    width: 347px;
+    height: 50px;
+    color: #BEB1A6;
+    font-size: 16px;
+    margin:auto 20px 20px auto;
+}
+
+.form__group-gender{
+    background-color: #E3DED9;
+    border: solid 1px #BEB1A6;
+    width: 100px;
+    height: 50px;
+    color: #BEB1A6;
+    font-size: 17px;
+    margin-right: 20px;
+}
+
+.form__group-category{
+    background-color: #E3DED9;
+    border: solid 1px #BEB1A6;
+    width: 220px;
+    height: 50px;
+    color: #BEB1A6;
+    font-size: 17px;
+    margin-right: 20px;
+}
+
+.form__group-date{
+    background-color: #E3DED9;
+    border: solid 1px #BEB1A6;
+    width: 140px;
+    height: 50px;
+    color: #BEB1A6;
+    font-size: 17px;
+    margin-right: 20px;
+}
+
+.form__group-search{
+    background-color: #8B7969;
+    border: solid 1px #BEB1A6;
+    width: 100px;
+    height: 50px;
+    color: #FFFFFF;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.form__group-reset{
+    background-color: #D9C6B5;
+    border: solid 1px #BEB1A6;
+    width: 100px;
+    height: 50px;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.form__group-export{
+    background-color: #E3DED9;
+    border: solid 1px #BEB1A6;
+    width: 140px;
+    height: 40px;
+    color: #BEB1A6;
+    font-size: 18px;
+}
+
+table{
+    width: 1184px;
+    margin-top: 25px;
+    text-align: center;
+    color: #8B7969;
+    font-size: 20px;
+    border: solid 1px #E0DFDE;
+}
+
+th{
+    height: 60px;
+    background-color: #8B7969;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+td{
+    height: 60px;
+}
+
+/* ベース */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+}
+
+.modal:target {
+    display: block;
+}
+
+/* ダイアログ本体 */
+.modal .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    height: 700px;
+    background: #fff;
+    padding: 20px 24px;
+    border: solid 1px #8B7969;
+    color: #8B7969;
+}
+
+/* 閉じるボタン */
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    text-decoration: none;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    color: #8B7969;
+    border: solid 1px #8B7969;
+    border-radius: 50%;
+}
+
+.open {
+    display: inline-block;
+    padding: .3em 1em;
+    text-decoration: none;
+    border: solid 1px #D9C6B5;
+}
+
+.modal2 {
+    display: none;
+}
+
+#modal-toggle:checked~.modal2 {
+    display: block;
+}
+
+.modal2 {
+    position: fixed;
+    inset: 0;
+}
+
+.modal2 .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: block;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.modal3 {
+    position: relative;
+}
+
+.modal3[open] .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+}
+
+.modal3[open] .content {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90vw, 520px);
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
+}
+
+.open {
+    width: 80px;
+    height: 40px;
+    background: #F4F4F4;
+    color: #D9C6B5;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.open::-webkit-details-marker {
+    display: none;
+}
+
+.modal__group{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.content__inner{
+    margin-top: 70px;
+}
+
+.modal__title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 70px;
+}
+
+.modal__content-name{
+    font-size: 20px;
+    font-weight: 400;
+    margin: 25px auto auto 168px;
+}
+
+.modal__content-gender{
+    font-size: 20px;
+    font-weight: 400;
+    margin: 25px auto auto 188px;
+}
+
+.modal__content-email{
+    font-size: 20px;
+    font-weight: 400;
+    margin: 25px auto auto 85px;
+}
+
+.modal__content-tel{
+    font-size: 20px;
+    font-weight: 400;
+    margin: 25px auto auto 148px;
+}
+
+.modal__content-address{
+    font-size: 20px;
+    font-weight: 400;
+    margin: 25px auto auto 188px;
+}
+
+.modal__content-building{
+    font-size: 20px;
+    font-weight: 400;
+    margin: 25px auto auto 167px;
+}
+
+.modal__content-category{
+    font-size: 20px;
+    font-weight: 400;
+    margin: 25px auto auto 52px;
+}
+
+.modal__content-detail{
+    font-size: 20px;
+    font-weight: 400;
+    margin: 25px auto auto 52px;
+}
+
+.modal__button{
+    justify-content: center;
+}
+
+.modal__button-delete{
+    width: 70px;
+    height: 35px;
+    background-color: #BA370D;
+    border: none;
+    color: #FFFFFF;
+    margin-top: 50px;
+}

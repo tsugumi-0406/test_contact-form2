@@ -39,25 +39,31 @@
               <input class="form__group-text" type="text" placeholder="名前やメールアドレスを入力してください"  name="keyword">
             </div>
             <div class="form__group">
-              <select class="form__group-gender" name="gender" id="">
-                <option value="" selected hidden>性別</option>
-                <option value="男性">男性</option>
-                <option value="女性">女性</option>
-                <option value="その他">その他</option>
-              </select>
+              <div class="form__group-gender">
+                <select class="select__gender" name="gender" id="">
+                  <option value="" selected hidden>性別</option>
+                  <option value="男性">男性</option>
+                  <option value="女性">女性</option>
+                  <option value="その他">その他</option>
+                </select>
+              </div>
             </div>
             <div class="form__group">
-              <select class="form__group-category" name="category_id" id="">
-                <option value="" selected hidden>お問い合わせの種類</option>
-                <option value="1">商品のお届けについて</option>
-                <option value="2">商品の交換について</option>
-                <option value="3">商品トラブル</option>
-                <option value="4">ショップへのお問い合わせ</option>
-                <option value="5">その他</option>
-              </select>
+              <div class="form__group-category">
+                <select class="select__category" name="category_id" id="">
+                  <option value="" selected hidden>お問い合わせの種類</option>
+                  <option value="1">商品のお届けについて</option>
+                  <option value="2">商品の交換について</option>
+                  <option value="3">商品トラブル</option>
+                  <option value="4">ショップへのお問い合わせ</option>
+                  <option value="5">その他</option>
+                </select>
+                </div>
             </div>
             <div class="form__group">
-              <input class="form__group-date" type="date" name="created_at" value="{{ request('created_at') }}">
+              <div class="form__group-date">
+                <input class="input__date" type="date" name="created_at" value="{{ request('created_at') }}">
+              </div>
             </div>
             <div class="form__group">
               <button class="form__group-search">検索</button>
@@ -132,6 +138,7 @@
                             <button class="modal__button-delete">削除</button>
                           </div>
                           </form>
+                          @csrf
                             <a href="#" class="close">×</a>
                         </div>
                       </div>
@@ -142,4 +149,6 @@
         </table>
        
     </main>
+
+    
 </body>

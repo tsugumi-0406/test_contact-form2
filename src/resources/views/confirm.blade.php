@@ -23,12 +23,10 @@
         <div class="contact-form__heading">
           <h2>Confirm</h2>
         </div>
-
         <form class="form" action="/thanks" method="post">
           @csrf
           <div class="confirm-table">
             <table class="confirm-table__inner">
-
               <tr class="confirm-table__row">
                 <th class="confirm-table__header">お名前</th>
                 <td class="confirm-table__text">
@@ -37,7 +35,6 @@
                   {{ $contact['first_name'] }}  {{ $contact['last_name'] }}
                 </td>
               </tr>
-
               <tr class="confirm-table__row">
                 <th class="confirm-table__header">性別</th>
                 <td class="confirm-table__text">
@@ -45,7 +42,6 @@
                   {{ $contact['gender'] }}
                 </td>
               </tr>
-
               <tr class="confirm-table__row">
                 <th class="confirm-table__header">メールアドレス</th>
                 <td class="confirm-table__text">
@@ -53,7 +49,6 @@
                   {{ $contact['email'] }}
                 </td>
               </tr>
-
               <tr class="confirm-table__row">
                 <th class="confirm-table__header"></th>
                 <td class="confirm-table__text">
@@ -61,7 +56,6 @@
                   {{ $contact['tel1'] }}{{ $contact['tel2'] }}{{ $contact['tel3'] }}
                 </td>
               </tr>
-
               <tr class="confirm-table__row">
                 <th class="confirm-table__header"></th>
                 <td class="confirm-table__text">
@@ -69,7 +63,6 @@
                   {{ $contact['address'] }}
                 </td>
               </tr>
-
               <tr class="confirm-table__row">
                 <th class="confirm-table__header"></th>
                 <td class="confirm-table__text">
@@ -77,7 +70,6 @@
                   {{ $contact['building'] }}
                 </td>
               </tr>
-
               <tr class="confirm-table__row">
                 <th class="confirm-table__header"></th>
                 <td class="confirm-table__text">
@@ -85,7 +77,6 @@
                   {{ $contact['category_name'] }}
                 </td>
               </tr>
-
               <tr class="confirm-table__row">
                 <th class="confirm-table__header"></th>
                 <td class="confirm-table__text">
@@ -93,21 +84,21 @@
                   {{ $contact['detail'] }}
                 </td>
               </tr>
-
             </table>
           </div>
-
           <div class="form__button">
             <button class="form__button-submit" type="submit">送信</button>
           </div>
         </form>
-
-
         <div class="form__link">
-          <a href="/" class="form__link-correction">修正</a>
+          <form action="{{ url('/') }}" method="get">
+            @foreach($contact as $key => $value)
+              <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+            @endforeach
+            <button type="submit" class="form__link-correction">修正</button>
+          </form>
         </div>
       </div>
     </main>
   </body>
-
   </html>

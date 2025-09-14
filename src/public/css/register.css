@@ -109,3 +109,7 @@ input{
     border: none;
     cursor: pointer;
 }
+
+.form__error{
+    color: red;
+}

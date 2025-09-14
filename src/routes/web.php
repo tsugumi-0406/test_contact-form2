@@ -14,24 +14,26 @@ use App\Http\Controllers\TestController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/', [TestController::class, 'index']);
 
 Route::post('/confirm', [TestController::class, 'confirm']);
 
-Route::get('/edit', [TestController::class, 'edit'])->name('form.index');
-
 Route::post('/thanks', [TestController::class, 'store']);
 
-Route::post('/admin', [TestController::class, 'admin']);
+// ログインした後のルーティング
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [TestController::class, 'admin']);
+    Route::post('/admin/register', [TestController::class, 'adminaftreregister']);
+    Route::get('/admin/search', [TestController::class, 'search']);
+    Route::delete('/admin/delete', [TestController::class, 'destroy']);
+});
 
-Route::get('/admin/search', [TestController::class, 'search']);
 
-Route::delete('/admin/delete', [TestController::class, 'destroy']);
+
+
 
 Route::get('/register', [TestController::class, 'register']);
 
+// /registerのヘッダーのログインボタン
 Route::get('/login', [TestController::class, 'login']);

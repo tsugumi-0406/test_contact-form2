@@ -171,7 +171,7 @@
                     <select name="category_id" class="form__input--select">
                         <option selected disabled>選択してください</option>
                         @foreach ($categories as $category)
-                          <option selected value="{{ $category['id'] }}">{{ $category['id'] }}.{{ $category['content'] }}</option>
+                          <option value="{{ $category['id'] }}">{{ $category['id'] }}.{{ $category['content'] }}</option>
                           @endforeach
                     </select>
                   </div>
@@ -201,7 +201,7 @@
                   @error('detail')
                     {{ $message }}
                   @enderror
-                </div>
+                </div>  
               </div>
             </div>
             
@@ -213,4 +213,5 @@
         </div>
     </div>
 </main>
+</body>
 </html>

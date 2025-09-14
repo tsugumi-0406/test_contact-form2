@@ -16,6 +16,7 @@
             <div class="thanks-main__text">
                 <p>お問い合わせありがとうございました</p>
                 <form class="form__button" action="/" post="get">
+                    @csrf
                   <button class="form__button-submit" type="submit">確認画面</button>
                 </form>
             </div>

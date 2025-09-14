@@ -97,17 +97,27 @@ input
     color: #FFFFFF;
     font-size: 20px;
     background-color: #82756A;
-    margin: 40px 10px auto 400px;
+    margin: 40px 10px auto 50px;
     padding: 10px 40px;
     border: none;
     cursor: pointer;
 }
 
 .form__link{
-    margin: 50px auto auto 80px;
+    margin: 80px 550px auto auto;
+    content: '';
+    position: absolute;
+    border-bottom: 0;
+    top: calc(100% - 0px);
+    right: 10px;
 }
 
 .form__link-correction{
     color: #8B7969;
     font-size: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #8B7969;
+    background-color: white;
 }
